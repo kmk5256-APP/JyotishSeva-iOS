@@ -7,25 +7,25 @@ struct ContentView: View {
         TabView {
             HomeView()
                 .tabItem {
-                    Label(appState.useHindi ? "\u092e\u0941\u0916\u094d\u092f" : "Home", systemImage: "house.fill")
+                    Label(appState.useHindi ? "\u{092e}\u{0941}\u{0916}\u{094d}\u{092f}" : "Home", systemImage: "house.fill")
                 }
             
             NewKundaliView()
                 .tabItem {
-                    Label(appState.useHindi ? "\u0915\u0941\u0902\u0921\u0932\u0940" : "Kundali", systemImage: "star.circle.fill")
+                    Label(appState.useHindi ? "\u{0915}\u{0941}\u{0902}\u{0921}\u{0932}\u{0940}" : "Kundali", systemImage: "star.circle.fill")
                 }
             
             MatchingView()
                 .tabItem {
-                    Label(appState.useHindi ? "\u092e\u093f\u0932\u093e\u0928" : "Matching", systemImage: "heart.circle.fill")
+                    Label(appState.useHindi ? "\u{092e}\u{093f}\u{0932}\u{093e}\u{0928}" : "Matching", systemImage: "heart.circle.fill")
                 }
             
             PanchangView()
                 .tabItem {
-                    Label(appState.useHindi ? "\u092a\u0902\u091a\u093e\u0902\u0917" : "Panchang", systemImage: "calendar")
+                    Label(appState.useHindi ? "\u{092a}\u{0902}\u{091a}\u{093e}\u{0902}\u{0917}" : "Panchang", systemImage: "calendar")
                 }
         }
-        .accentColor(.orange)
+        .tint(.orange)
     }
 }
 
