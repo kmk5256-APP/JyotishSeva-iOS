@@ -14,25 +14,25 @@ struct NewKundaliView: View {
         NavigationStack {
             Form {
                 Section {
-                    TextField(appState.useHindi ? "\u0928\u093e\u092e" : "Full Name", text: $name)
+                    TextField(appState.useHindi ? "\u{0928}\u{093e}\u{092e}" : "Full Name", text: $name)
                         .textInputAutocapitalization(.words)
                 } header: {
-                    Text(appState.useHindi ? "\u0935\u094d\u092f\u0915\u094d\u0924\u093f \u0915\u093e \u0935\u093f\u0935\u0930\u0923" : "Person Details")
+                    Text(appState.useHindi ? "\u{0935}\u{094d}\u{092f}\u{0915}\u{094d}\u{0924}\u{093f} \u{0915}\u{093e} \u{0935}\u{093f}\u{0935}\u{0930}\u{0923}" : "Person Details")
                 }
                 
                 Section {
-                    DatePicker(appState.useHindi ? "\u091c\u0928\u094d\u092e \u0924\u093f\u0925\u093f" : "Date of Birth", selection: $dateOfBirth, displayedComponents: .date)
-                    DatePicker(appState.useHindi ? "\u091c\u0928\u094d\u092e \u0938\u092e\u092f" : "Time of Birth", selection: $timeOfBirth, displayedComponents: .hourAndMinute)
+                    DatePicker(appState.useHindi ? "\u{091c}\u{0928}\u{094d}\u{092e} \u{0924}\u{093f}\u{0925}\u{093f}" : "Date of Birth", selection: $dateOfBirth, displayedComponents: .date)
+                    DatePicker(appState.useHindi ? "\u{091c}\u{0928}\u{094d}\u{092e} \u{0938}\u{092e}\u{092f}" : "Time of Birth", selection: $timeOfBirth, displayedComponents: .hourAndMinute)
                 } header: {
-                    Text(appState.useHindi ? "\u091c\u0928\u094d\u092e \u0935\u093f\u0935\u0930\u0923" : "Birth Details")
+                    Text(appState.useHindi ? "\u{091c}\u{0928}\u{094d}\u{092e} \u{0935}\u{093f}\u{0935}\u{0930}\u{0923}" : "Birth Details")
                 } footer: {
-                    Text(appState.useHindi ? "\u0938\u091f\u0940\u0915 \u0938\u092e\u092f \u0905\u0924\u094d\u092f\u0902\u0924 \u092e\u0939\u0924\u094d\u0935\u092a\u0942\u0930\u094d\u0923 \u0939\u0948" : "Accurate time is extremely important")
+                    Text(appState.useHindi ? "\u{0938}\u{091f}\u{0940}\u{0915} \u{0938}\u{092e}\u{092f} \u{0905}\u{0924}\u{094d}\u{092f}\u{0902}\u{0924} \u{092e}\u{0939}\u{0924}\u{094d}\u{0935}\u{092a}\u{0942}\u{0930}\u{094d}\u{0923} \u{0939}\u{0948}" : "Accurate time is extremely important")
                 }
                 
                 Section {
-                    TextField(appState.useHindi ? "\u091c\u0928\u094d\u092e \u0938\u094d\u0925\u093e\u0928" : "Place of Birth", text: $placeName)
+                    TextField(appState.useHindi ? "\u{091c}\u{0928}\u{094d}\u{092e} \u{0938}\u{094d}\u{0925}\u{093e}\u{0928}" : "Place of Birth", text: $placeName)
                 } header: {
-                    Text(appState.useHindi ? "\u0938\u094d\u0925\u093e\u0928" : "Location")
+                    Text(appState.useHindi ? "\u{0938}\u{094d}\u{0925}\u{093e}\u{0928}" : "Location")
                 }
                 
                 Section {
@@ -41,7 +41,7 @@ struct NewKundaliView: View {
                     } label: {
                         HStack {
                             Spacer()
-                            Label(appState.useHindi ? "\u0915\u0941\u0902\u0921\u0932\u0940 \u092c\u0928\u093e\u090f\u0901" : "Generate Kundali", systemImage: "sparkles")
+                            Label(appState.useHindi ? "\u{0915}\u{0941}\u{0902}\u{0921}\u{0932}\u{0940} \u{092c}\u{0928}\u{093e}\u{090f}\u{0901}" : "Generate Kundali", systemImage: "sparkles")
                                 .fontWeight(.semibold)
                             Spacer()
                         }
@@ -51,7 +51,7 @@ struct NewKundaliView: View {
                     .foregroundColor(.white)
                 }
             }
-            .navigationTitle(appState.useHindi ? "\u0928\u0908 \u0915\u0941\u0902\u0921\u0932\u0940" : "New Kundali")
+            .navigationTitle(appState.useHindi ? "\u{0928}\u{0908} \u{0915}\u{0941}\u{0902}\u{0921}\u{0932}\u{0940}" : "New Kundali")
             .navigationBarTitleDisplayMode(.inline)
             .sheet(isPresented: $showingResult) {
                 if let kundali = generatedKundali {
@@ -59,7 +59,7 @@ struct NewKundaliView: View {
                         KundaliDetailView(kundali: kundali)
                             .toolbar {
                                 ToolbarItem(placement: .cancellationAction) {
-                                    Button(appState.useHindi ? "\u092c\u0902\u0926 \u0915\u0930\u0947\u0902" : "Close") {
+                                    Button(appState.useHindi ? "\u{092c}\u{0902}\u{0926} \u{0915}\u{0930}\u{0947}\u{0902}" : "Close") {
                                         showingResult = false
                                     }
                                 }

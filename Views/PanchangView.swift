@@ -7,19 +7,19 @@ struct PanchangView: View {
     private var demoPanchang: PanchangData {
         let day = Calendar.current.component(.day, from: selectedDate)
         return PanchangData(
-            tithi: ["\u092a\u094d\u0930\u0924\u093f\u092a\u0926\u093e", "\u0926\u094d\u0935\u093f\u0924\u0940\u092f\u093e", "\u0924\u0943\u0924\u0940\u092f\u093e", "\u091a\u0924\u0941\u0930\u094d\u0925\u0940", "\u092a\u0902\u091a\u092e\u0940",
-                    "\u0937\u0937\u094d\u0920\u0940", "\u0938\u092a\u094d\u0924\u092e\u0940", "\u0905\u0937\u094d\u091f\u092e\u0940", "\u0928\u0935\u092e\u0940", "\u0926\u0936\u092e\u0940",
-                    "\u090f\u0915\u093e\u0926\u0936\u0940", "\u0926\u094d\u0935\u093e\u0926\u0936\u0940", "\u0924\u094d\u0930\u092f\u094b\u0926\u0936\u0940", "\u091a\u0924\u0941\u0930\u094d\u0926\u0936\u0940", "\u092a\u0942\u0930\u094d\u0923\u093f\u092e\u093e"][day % 15],
+            tithi: ["\u{092a}\u{094d}\u{0930}\u{0924}\u{093f}\u{092a}\u{0926}\u{093e}", "\u{0926}\u{094d}\u{0935}\u{093f}\u{0924}\u{0940}\u{092f}\u{093e}", "\u{0924}\u{0943}\u{0924}\u{0940}\u{092f}\u{093e}", "\u{091a}\u{0924}\u{0941}\u{0930}\u{094d}\u{0925}\u{0940}", "\u{092a}\u{0902}\u{091a}\u{092e}\u{0940}",
+                    "\u{0937}\u{0937}\u{094d}\u{0920}\u{0940}", "\u{0938}\u{092a}\u{094d}\u{0924}\u{092e}\u{0940}", "\u{0905}\u{0937}\u{094d}\u{091f}\u{092e}\u{0940}", "\u{0928}\u{0935}\u{092e}\u{0940}", "\u{0926}\u{0936}\u{092e}\u{0940}",
+                    "\u{090f}\u{0915}\u{093e}\u{0926}\u{0936}\u{0940}", "\u{0926}\u{094d}\u{0935}\u{093e}\u{0926}\u{0936}\u{0940}", "\u{0924}\u{094d}\u{0930}\u{092f}\u{094b}\u{0926}\u{0936}\u{0940}", "\u{091a}\u{0924}\u{0941}\u{0930}\u{094d}\u{0926}\u{0936}\u{0940}", "\u{092a}\u{0942}\u{0930}\u{094d}\u{0923}\u{093f}\u{092e}\u{093e}"][day % 15],
             tithiEnd: "14:32",
-            nakshatra: ["\u0905\u0936\u094d\u0935\u093f\u0928\u0940", "\u092d\u0930\u0923\u0940", "\u0915\u0943\u0924\u094d\u0924\u093f\u0915\u093e", "\u0930\u094b\u0939\u093f\u0923\u0940", "\u092e\u0943\u0917\u0936\u093f\u0930\u093e",
-                        "\u0906\u0930\u094d\u0926\u094d\u0930\u093e", "\u092a\u0941\u0928\u0930\u094d\u0935\u0938\u0941", "\u092a\u0941\u0937\u094d\u092f", "\u0906\u0936\u094d\u0932\u0947\u0937\u093e", "\u092e\u0918\u093e"][day % 10],
+            nakshatra: ["\u{0905}\u{0936}\u{094d}\u{0935}\u{093f}\u{0928}\u{0940}", "\u{092d}\u{0930}\u{0923}\u{0940}", "\u{0915}\u{0943}\u{0924}\u{094d}\u{0924}\u{093f}\u{0915}\u{093e}", "\u{0930}\u{094b}\u{0939}\u{093f}\u{0923}\u{0940}", "\u{092e}\u{0943}\u{0917}\u{0936}\u{093f}\u{0930}\u{093e}",
+                        "\u{0906}\u{0930}\u{094d}\u{0926}\u{094d}\u{0930}\u{093e}", "\u{092a}\u{0941}\u{0928}\u{0930}\u{094d}\u{0935}\u{0938}\u{0941}", "\u{092a}\u{0941}\u{0937}\u{094d}\u{092f}", "\u{0906}\u{0936}\u{094d}\u{0932}\u{0947}\u{0937}\u{093e}", "\u{092e}\u{0918}\u{093e}"][day % 10],
             nakshatraEnd: "21:15",
-            yoga: ["\u0935\u093f\u0937\u094d\u0915\u0902\u092d", "\u092a\u094d\u0930\u0940\u0924\u093f", "\u0906\u092f\u0941\u0937\u094d\u092e\u093e\u0928", "\u0938\u094c\u092d\u093e\u0917\u094d\u092f", "\u0936\u094b\u092d\u0928"][day % 5],
-            karana: ["\u092c\u0935", "\u092c\u093e\u0932\u0935", "\u0915\u094c\u0932\u0935", "\u0924\u0948\u0924\u093f\u0932", "\u0917\u0930"][day % 5],
+            yoga: ["\u{0935}\u{093f}\u{0937}\u{094d}\u{0915}\u{0902}\u{092d}", "\u{092a}\u{094d}\u{0930}\u{0940}\u{0924}\u{093f}", "\u{0906}\u{092f}\u{0941}\u{0937}\u{094d}\u{092e}\u{093e}\u{0928}", "\u{0938}\u{094c}\u{092d}\u{093e}\u{0917}\u{094d}\u{092f}", "\u{0936}\u{094b}\u{092d}\u{0928}"][day % 5],
+            karana: ["\u{092c}\u{0935}", "\u{092c}\u{093e}\u{0932}\u{0935}", "\u{0915}\u{094c}\u{0932}\u{0935}", "\u{0924}\u{0948}\u{0924}\u{093f}\u{0932}", "\u{0917}\u{0930}"][day % 5],
             sunrise: "06:12",
             sunset: "18:48",
-            rahuKaal: "10:30 \u2013 12:00",
-            abhijitMuhurat: "11:48 \u2013 12:36",
+            rahuKaal: "10:30 \u{2013} 12:00",
+            abhijitMuhurat: "11:48 \u{2013} 12:36",
             weekday: weekdayName(for: selectedDate)
         )
     }
@@ -33,35 +33,35 @@ struct PanchangView: View {
                         .padding(.horizontal)
                     
                     VStack(spacing: 12) {
-                        PanchangRow(title: appState.useHindi ? "\u0935\u093e\u0930" : "Weekday", value: demoPanchang.weekday, icon: "calendar")
-                        PanchangRow(title: appState.useHindi ? "\u0924\u093f\u0925\u093f" : "Tithi", value: "\(demoPanchang.tithi) (upto \(demoPanchang.tithiEnd))", icon: "moon.stars")
-                        PanchangRow(title: appState.useHindi ? "\u0928\u0915\u094d\u0937\u0924\u094d\u0930" : "Nakshatra", value: "\(demoPanchang.nakshatra) (upto \(demoPanchang.nakshatraEnd))", icon: "sparkles")
-                        PanchangRow(title: appState.useHindi ? "\u092f\u094b\u0917" : "Yoga", value: demoPanchang.yoga, icon: "circle.hexagongrid")
-                        PanchangRow(title: appState.useHindi ? "\u0915\u0930\u0923" : "Karana", value: demoPanchang.karana, icon: "triangle")
+                        PanchangRow(title: appState.useHindi ? "\u{0935}\u{093e}\u{0930}" : "Weekday", value: demoPanchang.weekday, icon: "calendar")
+                        PanchangRow(title: appState.useHindi ? "\u{0924}\u{093f}\u{0925}\u{093f}" : "Tithi", value: "\(demoPanchang.tithi) (upto \(demoPanchang.tithiEnd))", icon: "moon.stars")
+                        PanchangRow(title: appState.useHindi ? "\u{0928}\u{0915}\u{094d}\u{0937}\u{0924}\u{094d}\u{0930}" : "Nakshatra", value: "\(demoPanchang.nakshatra) (upto \(demoPanchang.nakshatraEnd))", icon: "sparkles")
+                        PanchangRow(title: appState.useHindi ? "\u{092f}\u{094b}\u{0917}" : "Yoga", value: demoPanchang.yoga, icon: "circle.hexagongrid")
+                        PanchangRow(title: appState.useHindi ? "\u{0915}\u{0930}\u{0923}" : "Karana", value: demoPanchang.karana, icon: "triangle")
                     }
                     .padding(.horizontal)
                     
                     VStack(alignment: .leading, spacing: 12) {
-                        Text(appState.useHindi ? "\u0938\u092e\u092f" : "Timings")
+                        Text(appState.useHindi ? "\u{0938}\u{092e}\u{092f}" : "Timings")
                             .font(.headline)
                             .padding(.horizontal)
                         
                         HStack(spacing: 12) {
-                            TimingCard(title: appState.useHindi ? "\u0938\u0942\u0930\u094d\u092f\u094b\u0926\u092f" : "Sunrise", value: demoPanchang.sunrise, color: .orange)
-                            TimingCard(title: appState.useHindi ? "\u0938\u0942\u0930\u094d\u092f\u093e\u0938\u094d\u0924" : "Sunset", value: demoPanchang.sunset, color: .indigo)
+                            TimingCard(title: appState.useHindi ? "\u{0938}\u{0942}\u{0930}\u{094d}\u{092f}\u{094b}\u{0926}\u{092f}" : "Sunrise", value: demoPanchang.sunrise, color: .orange)
+                            TimingCard(title: appState.useHindi ? "\u{0938}\u{0942}\u{0930}\u{094d}\u{092f}\u{093e}\u{0938}\u{094d}\u{0924}" : "Sunset", value: demoPanchang.sunset, color: .indigo)
                         }
                         .padding(.horizontal)
                         
                         HStack(spacing: 12) {
-                            TimingCard(title: appState.useHindi ? "\u0930\u093e\u0939\u0941\u0915\u093e\u0932" : "Rahu Kaal", value: demoPanchang.rahuKaal, color: .red)
-                            TimingCard(title: appState.useHindi ? "\u0905\u092d\u093f\u091c\u093f\u0924" : "Abhijit", value: demoPanchang.abhijitMuhurat, color: .green)
+                            TimingCard(title: appState.useHindi ? "\u{0930}\u{093e}\u{0939}\u{0941}\u{0915}\u{093e}\u{0932}" : "Rahu Kaal", value: demoPanchang.rahuKaal, color: .red)
+                            TimingCard(title: appState.useHindi ? "\u{0905}\u{092d}\u{093f}\u{091c}\u{093f}\u{0924}" : "Abhijit", value: demoPanchang.abhijitMuhurat, color: .green)
                         }
                         .padding(.horizontal)
                     }
                     
                     Text(appState.useHindi
-                         ? "\u26a0\ufe0f \u0921\u0947\u092e\u094b \u092a\u0902\u091a\u093e\u0902\u0917\u0964 \u0935\u093e\u0938\u094d\u0924\u0935\u093f\u0915 \u0917\u0923\u0928\u093e \u0915\u0947 \u0932\u093f\u090f \u0938\u0939\u0940 \u0907\u0902\u091c\u093f\u0928 \u091c\u094b\u0921\u093c\u0947\u0902\u0964"
-                         : "\u26a0\ufe0f Demo Panchang. Integrate real calculation for production.")
+                         ? "\u{26a0}\u{fe0f} \u{0921}\u{0947}\u{092e}\u{094b} \u{092a}\u{0902}\u{091a}\u{093e}\u{0902}\u{0917}\u{0964} \u{0935}\u{093e}\u{0938}\u{094d}\u{0924}\u{0935}\u{093f}\u{0915} \u{0917}\u{0923}\u{0928}\u{093e} \u{0915}\u{0947} \u{0932}\u{093f}\u{090f} \u{0938}\u{0939}\u{0940} \u{0907}\u{0902}\u{091c}\u{093f}\u{0928} \u{091c}\u{094b}\u{0921}\u{093c}\u{0947}\u{0902}\u{0964}"
+                         : "\u{26a0}\u{fe0f} Demo Panchang. Integrate real calculation for production.")
                         .font(.caption2)
                         .foregroundColor(.secondary)
                         .padding()
@@ -69,7 +69,7 @@ struct PanchangView: View {
                 .padding(.vertical)
             }
             .background(Color(.systemGroupedBackground))
-            .navigationTitle(appState.useHindi ? "\u092a\u0902\u091a\u093e\u0902\u0917" : "Panchang")
+            .navigationTitle(appState.useHindi ? "\u{092a}\u{0902}\u{091a}\u{093e}\u{0902}\u{0917}" : "Panchang")
         }
     }
     
