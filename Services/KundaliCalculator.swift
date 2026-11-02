@@ -69,14 +69,14 @@ final class KundaliCalculator {
         let hash = abs(boy.name.hashValue &+ girl.name.hashValue)
         
         let kootas: [KootaScore] = [
-            KootaScore(name: "Varna", hindiName: "\u0935\u0930\u094d\u0923", maxPoints: 1, obtained: hash % 2, description: "Spiritual compatibility"),
-            KootaScore(name: "Vashya", hindiName: "\u0935\u0936\u094d\u092f", maxPoints: 2, obtained: (hash / 2) % 3, description: "Mutual attraction & control"),
-            KootaScore(name: "Tara", hindiName: "\u0924\u093e\u0930\u093e", maxPoints: 3, obtained: (hash / 3) % 4, description: "Destiny & health"),
-            KootaScore(name: "Yoni", hindiName: "\u092f\u094b\u0928\u093f", maxPoints: 4, obtained: (hash / 5) % 5, description: "Sexual & physical compatibility"),
-            KootaScore(name: "Graha Maitri", hindiName: "\u0917\u094d\u0930\u0939 \u092e\u0948\u0924\u094d\u0930\u0940", maxPoints: 5, obtained: (hash / 7) % 6, description: "Mental compatibility"),
-            KootaScore(name: "Gana", hindiName: "\u0917\u0923", maxPoints: 6, obtained: (hash / 11) % 7, description: "Temperament"),
-            KootaScore(name: "Bhakoot", hindiName: "\u092d\u0915\u0942\u091f", maxPoints: 7, obtained: (hash / 13) % 8, description: "Emotional & family harmony"),
-            KootaScore(name: "Nadi", hindiName: "\u0928\u093e\u0921\u093c\u0940", maxPoints: 8, obtained: (hash / 17) % 9, description: "Health & progeny (most important)")
+            KootaScore(name: "Varna", hindiName: "\u{0935}\u{0930}\u{094d}\u{0923}", maxPoints: 1, obtained: hash % 2, description: "Spiritual compatibility"),
+            KootaScore(name: "Vashya", hindiName: "\u{0935}\u{0936}\u{094d}\u{092f}", maxPoints: 2, obtained: (hash / 2) % 3, description: "Mutual attraction & control"),
+            KootaScore(name: "Tara", hindiName: "\u{0924}\u{093e}\u{0930}\u{093e}", maxPoints: 3, obtained: (hash / 3) % 4, description: "Destiny & health"),
+            KootaScore(name: "Yoni", hindiName: "\u{092f}\u{094b}\u{0928}\u{093f}", maxPoints: 4, obtained: (hash / 5) % 5, description: "Sexual & physical compatibility"),
+            KootaScore(name: "Graha Maitri", hindiName: "\u{0917}\u{094d}\u{0930}\u{0939} \u{092e}\u{0948}\u{0924}\u{094d}\u{0930}\u{0940}", maxPoints: 5, obtained: (hash / 7) % 6, description: "Mental compatibility"),
+            KootaScore(name: "Gana", hindiName: "\u{0917}\u{0923}", maxPoints: 6, obtained: (hash / 11) % 7, description: "Temperament"),
+            KootaScore(name: "Bhakoot", hindiName: "\u{092d}\u{0915}\u{0942}\u{091f}", maxPoints: 7, obtained: (hash / 13) % 8, description: "Emotional & family harmony"),
+            KootaScore(name: "Nadi", hindiName: "\u{0928}\u{093e}\u{0921}\u{093c}\u{0940}", maxPoints: 8, obtained: (hash / 17) % 9, description: "Health & progeny (most important)")
         ]
         
         let total = kootas.reduce(0) { $0 + $1.obtained }
@@ -87,16 +87,16 @@ final class KundaliCalculator {
         let (rec, hindiRec): (String, String)
         if total >= 28 {
             rec = "Excellent match. Highly recommended."
-            hindiRec = "\u0909\u0924\u094d\u0924\u092e \u092e\u093f\u0932\u093e\u0928\u0964 \u0905\u0924\u094d\u092f\u0902\u0924 \u0905\u0928\u0941\u0936\u0902\u0938\u093f\u0924\u0964"
+            hindiRec = "\u{0909}\u{0924}\u{094d}\u{0924}\u{092e} \u{092e}\u{093f}\u{0932}\u{093e}\u{0928}\u{0964} \u{0905}\u{0924}\u{094d}\u{092f}\u{0902}\u{0924} \u{0905}\u{0928}\u{0941}\u{0936}\u{0902}\u{0938}\u{093f}\u{0924}\u{0964}"
         } else if total >= 18 {
             rec = "Good match. Acceptable with minor remedies if needed."
-            hindiRec = "\u0905\u091a\u094d\u091b\u093e \u092e\u093f\u0932\u093e\u0928\u0964 \u0906\u0935\u0936\u094d\u092f\u0915\u0924\u093e\u0928\u0941\u0938\u093e\u0930 \u0909\u092a\u093e\u092f \u0915\u0947 \u0938\u093e\u0925 \u0938\u094d\u0935\u0940\u0915\u093e\u0930\u094d\u092f\u0964"
+            hindiRec = "\u{0905}\u{091a}\u{094d}\u{091b}\u{093e} \u{092e}\u{093f}\u{0932}\u{093e}\u{0928}\u{0964} \u{0906}\u{0935}\u{0936}\u{094d}\u{092f}\u{0915}\u{0924}\u{093e}\u{0928}\u{0941}\u{0938}\u{093e}\u{0930} \u{0909}\u{092a}\u{093e}\u{092f} \u{0915}\u{0947} \u{0938}\u{093e}\u{0925} \u{0938}\u{094d}\u{0935}\u{0940}\u{0915}\u{093e}\u{0930}\u{094d}\u{092f}\u{0964}"
         } else if total >= 12 {
             rec = "Average. Consult senior pandit and consider remedies."
-            hindiRec = "\u092e\u0927\u094d\u092f\u092e\u0964 \u0935\u0930\u093f\u0937\u094d\u0920 \u092a\u0902\u0921\u093f\u0924 \u0938\u0947 \u092a\u0930\u093e\u092e\u0930\u094d\u0936 \u0932\u0947\u0902 \u0914\u0930 \u0909\u092a\u093e\u092f \u0915\u0930\u0947\u0902\u0964"
+            hindiRec = "\u{092e}\u{0927}\u{094d}\u{092f}\u{092e}\u{0964} \u{0935}\u{0930}\u{093f}\u{0937}\u{094d}\u{0920} \u{092a}\u{0902}\u{0921}\u{093f}\u{0924} \u{0938}\u{0947} \u{092a}\u{0930}\u{093e}\u{092e}\u{0930}\u{094d}\u{0936} \u{0932}\u{0947}\u{0902} \u{0914}\u{0930} \u{0909}\u{092a}\u{093e}\u{092f} \u{0915}\u{0930}\u{0947}\u{0902}\u{0964}"
         } else {
             rec = "Low compatibility. Not recommended without strong remedies."
-            hindiRec = "\u0915\u092e \u0905\u0928\u0941\u0915\u0942\u0932\u0924\u093e\u0964 \u092e\u091c\u092c\u0942\u0924 \u0909\u092a\u093e\u092f\u094b\u0902 \u0915\u0947 \u092c\u093f\u0928\u093e \u0905\u0928\u0941\u0936\u0902\u0938\u093f\u0924 \u0928\u0939\u0940\u0902\u0964"
+            hindiRec = "\u{0915}\u{092e} \u{0905}\u{0928}\u{0941}\u{0915}\u{0942}\u{0932}\u{0924}\u{093e}\u{0964} \u{092e}\u{091c}\u{092c}\u{0942}\u{0924} \u{0909}\u{092a}\u{093e}\u{092f}\u{094b}\u{0902} \u{0915}\u{0947} \u{092c}\u{093f}\u{0928}\u{093e} \u{0905}\u{0928}\u{0941}\u{0936}\u{0902}\u{0938}\u{093f}\u{0924} \u{0928}\u{0939}\u{0940}\u{0902}\u{0964}"
         }
         
         return MatchingResult(

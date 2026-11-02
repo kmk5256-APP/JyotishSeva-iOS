@@ -11,7 +11,7 @@ struct KundaliDetailView: View {
                     Text(kundali.birthDetails.name)
                         .font(.title)
                         .fontWeight(.bold)
-                    Text("\(kundali.birthDetails.formattedDate) \u2022 \(kundali.birthDetails.formattedTime)")
+                    Text("\(kundali.birthDetails.formattedDate) \u{2022} \(kundali.birthDetails.formattedTime)")
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                     Text(kundali.birthDetails.placeName)
@@ -25,15 +25,15 @@ struct KundaliDetailView: View {
                 .padding(.horizontal)
                 
                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
-                    InfoCard(title: appState.useHindi ? "\u0932\u0917\u094d\u0928" : "Lagna", value: kundali.lagna)
-                    InfoCard(title: appState.useHindi ? "\u0930\u093e\u0936\u093f" : "Moon Sign", value: kundali.moonSign)
-                    InfoCard(title: appState.useHindi ? "\u0928\u0915\u094d\u0937\u0924\u094d\u0930" : "Nakshatra", value: kundali.nakshatra)
-                    InfoCard(title: appState.useHindi ? "\u0928\u0915\u094d\u0937\u0924\u094d\u0930 \u0938\u094d\u0935\u093e\u092e\u0940" : "Nakshatra Lord", value: kundali.nakshatraLord)
+                    InfoCard(title: appState.useHindi ? "\u{0932}\u{0917}\u{094d}\u{0928}" : "Lagna", value: kundali.lagna)
+                    InfoCard(title: appState.useHindi ? "\u{0930}\u{093e}\u{0936}\u{093f}" : "Moon Sign", value: kundali.moonSign)
+                    InfoCard(title: appState.useHindi ? "\u{0928}\u{0915}\u{094d}\u{0937}\u{0924}\u{094d}\u{0930}" : "Nakshatra", value: kundali.nakshatra)
+                    InfoCard(title: appState.useHindi ? "\u{0928}\u{0915}\u{094d}\u{0937}\u{0924}\u{094d}\u{0930} \u{0938}\u{094d}\u{0935}\u{093e}\u{092e}\u{0940}" : "Nakshatra Lord", value: kundali.nakshatraLord)
                 }
                 .padding(.horizontal)
                 
                 VStack(alignment: .leading, spacing: 8) {
-                    Text(appState.useHindi ? "\u0935\u0930\u094d\u0924\u092e\u093e\u0928 \u0926\u0936\u093e" : "Current Dasha")
+                    Text(appState.useHindi ? "\u{0935}\u{0930}\u{094d}\u{0924}\u{092e}\u{093e}\u{0928} \u{0926}\u{0936}\u{093e}" : "Current Dasha")
                         .font(.headline)
                     HStack {
                         VStack(alignment: .leading) {
@@ -54,7 +54,7 @@ struct KundaliDetailView: View {
                 .padding(.horizontal)
                 
                 VStack(alignment: .leading, spacing: 12) {
-                    Text(appState.useHindi ? "\u0917\u094d\u0930\u0939 \u0938\u094d\u0925\u093f\u0924\u093f" : "Planetary Positions")
+                    Text(appState.useHindi ? "\u{0917}\u{094d}\u{0930}\u{0939} \u{0938}\u{094d}\u{0925}\u{093f}\u{0924}\u{093f}" : "Planetary Positions")
                         .font(.headline)
                         .padding(.horizontal)
                     
@@ -64,8 +64,8 @@ struct KundaliDetailView: View {
                 }
                 
                 Text(appState.useHindi
-                     ? "\u26a0\ufe0f \u092f\u0939 \u0921\u0947\u092e\u094b \u0921\u0947\u091f\u093e \u0939\u0948\u0964 \u0935\u093e\u0938\u094d\u0924\u0935\u093f\u0915 \u0917\u0923\u0928\u093e \u0915\u0947 \u0932\u093f\u090f Swiss Ephemeris \u091c\u094b\u0921\u093c\u0947\u0902\u0964"
-                     : "\u26a0\ufe0f Demo data only. Integrate Swiss Ephemeris for production accuracy.")
+                     ? "\u{26a0}\u{fe0f} \u{092f}\u{0939} \u{0921}\u{0947}\u{092e}\u{094b} \u{0921}\u{0947}\u{091f}\u{093e} \u{0939}\u{0948}\u{0964} \u{0935}\u{093e}\u{0938}\u{094d}\u{0924}\u{0935}\u{093f}\u{0915} \u{0917}\u{0923}\u{0928}\u{093e} \u{0915}\u{0947} \u{0932}\u{093f}\u{090f} Swiss Ephemeris \u{091c}\u{094b}\u{0921}\u{093c}\u{0947}\u{0902}\u{0964}"
+                     : "\u{26a0}\u{fe0f} Demo data only. Integrate Swiss Ephemeris for production accuracy.")
                     .font(.caption2)
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
@@ -74,7 +74,7 @@ struct KundaliDetailView: View {
             .padding(.vertical)
         }
         .background(Color(.systemGroupedBackground))
-        .navigationTitle(appState.useHindi ? "\u0915\u0941\u0902\u0921\u0932\u0940" : "Kundali")
+        .navigationTitle(appState.useHindi ? "\u{0915}\u{0941}\u{0902}\u{0921}\u{0932}\u{0940}" : "Kundali")
         .navigationBarTitleDisplayMode(.inline)
     }
 }
@@ -112,7 +112,7 @@ struct PlanetRow: View {
             VStack(alignment: .leading, spacing: 2) {
                 Text(useHindi ? position.planet.hindiName : position.planet.rawValue)
                     .fontWeight(.medium)
-                Text("\(position.sign) \u2022 \(position.displayDegree)")
+                Text("\(position.sign) \u{2022} \(position.displayDegree)")
                     .font(.caption)
                     .foregroundColor(.secondary)
             }

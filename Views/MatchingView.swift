@@ -17,19 +17,19 @@ struct MatchingView: View {
         NavigationStack {
             Form {
                 Section {
-                    TextField(appState.useHindi ? "\u0932\u0921\u093c\u0915\u0947 \u0915\u093e \u0928\u093e\u092e" : "Boy's Name", text: $boyName)
-                    DatePicker(appState.useHindi ? "\u091c\u0928\u094d\u092e \u0924\u093f\u0925\u093f" : "Date of Birth", selection: $boyDOB, displayedComponents: .date)
-                    DatePicker(appState.useHindi ? "\u091c\u0928\u094d\u092e \u0938\u092e\u092f" : "Time of Birth", selection: $boyTOB, displayedComponents: .hourAndMinute)
+                    TextField(appState.useHindi ? "\u{0932}\u{0921}\u{093c}\u{0915}\u{0947} \u{0915}\u{093e} \u{0928}\u{093e}\u{092e}" : "Boy's Name", text: $boyName)
+                    DatePicker(appState.useHindi ? "\u{091c}\u{0928}\u{094d}\u{092e} \u{0924}\u{093f}\u{0925}\u{093f}" : "Date of Birth", selection: $boyDOB, displayedComponents: .date)
+                    DatePicker(appState.useHindi ? "\u{091c}\u{0928}\u{094d}\u{092e} \u{0938}\u{092e}\u{092f}" : "Time of Birth", selection: $boyTOB, displayedComponents: .hourAndMinute)
                 } header: {
-                    Text(appState.useHindi ? "\u0935\u0930 (\u0932\u0921\u093c\u0915\u093e)" : "Groom (Boy)")
+                    Text(appState.useHindi ? "\u{0935}\u{0930} (\u{0932}\u{0921}\u{093c}\u{0915}\u{093e})" : "Groom (Boy)")
                 }
                 
                 Section {
-                    TextField(appState.useHindi ? "\u0932\u0921\u093c\u0915\u0940 \u0915\u093e \u0928\u093e\u092e" : "Girl's Name", text: $girlName)
-                    DatePicker(appState.useHindi ? "\u091c\u0928\u094d\u092e \u0924\u093f\u0925\u093f" : "Date of Birth", selection: $girlDOB, displayedComponents: .date)
-                    DatePicker(appState.useHindi ? "\u091c\u0928\u094d\u092e \u0938\u092e\u092f" : "Time of Birth", selection: $girlTOB, displayedComponents: .hourAndMinute)
+                    TextField(appState.useHindi ? "\u{0932}\u{0921}\u{093c}\u{0915}\u{0940} \u{0915}\u{093e} \u{0928}\u{093e}\u{092e}" : "Girl's Name", text: $girlName)
+                    DatePicker(appState.useHindi ? "\u{091c}\u{0928}\u{094d}\u{092e} \u{0924}\u{093f}\u{0925}\u{093f}" : "Date of Birth", selection: $girlDOB, displayedComponents: .date)
+                    DatePicker(appState.useHindi ? "\u{091c}\u{0928}\u{094d}\u{092e} \u{0938}\u{092e}\u{092f}" : "Time of Birth", selection: $girlTOB, displayedComponents: .hourAndMinute)
                 } header: {
-                    Text(appState.useHindi ? "\u0935\u0927\u0942 (\u0932\u0921\u093c\u0915\u0940)" : "Bride (Girl)")
+                    Text(appState.useHindi ? "\u{0935}\u{0927}\u{0942} (\u{0932}\u{0921}\u{093c}\u{0915}\u{0940})" : "Bride (Girl)")
                 }
                 
                 Section {
@@ -38,7 +38,7 @@ struct MatchingView: View {
                     } label: {
                         HStack {
                             Spacer()
-                            Label(appState.useHindi ? "\u092e\u093f\u0932\u093e\u0928 \u0915\u0930\u0947\u0902" : "Check Matching", systemImage: "heart.fill")
+                            Label(appState.useHindi ? "\u{092e}\u{093f}\u{0932}\u{093e}\u{0928} \u{0915}\u{0930}\u{0947}\u{0902}" : "Check Matching", systemImage: "heart.fill")
                                 .fontWeight(.semibold)
                             Spacer()
                         }
@@ -48,7 +48,7 @@ struct MatchingView: View {
                     .foregroundColor(.white)
                 }
             }
-            .navigationTitle(appState.useHindi ? "\u0915\u0941\u0902\u0921\u0932\u0940 \u092e\u093f\u0932\u093e\u0928" : "Kundali Matching")
+            .navigationTitle(appState.useHindi ? "\u{0915}\u{0941}\u{0902}\u{0921}\u{0932}\u{0940} \u{092e}\u{093f}\u{0932}\u{093e}\u{0928}" : "Kundali Matching")
             .sheet(isPresented: $showingResult) {
                 if let result = result {
                     MatchingResultView(result: result)
@@ -102,21 +102,21 @@ struct MatchingResultView: View {
                         VStack {
                             Text(result.boyName).fontWeight(.semibold)
                             if result.isManglikBoy {
-                                Text(appState.useHindi ? "\u092e\u093e\u0902\u0917\u0932\u093f\u0915" : "Manglik").font(.caption).foregroundColor(.red)
+                                Text(appState.useHindi ? "\u{092e}\u{093e}\u{0902}\u{0917}\u{0932}\u{093f}\u{0915}" : "Manglik").font(.caption).foregroundColor(.red)
                             }
                         }
                         Image(systemName: "heart.fill").foregroundColor(.pink)
                         VStack {
                             Text(result.girlName).fontWeight(.semibold)
                             if result.isManglikGirl {
-                                Text(appState.useHindi ? "\u092e\u093e\u0902\u0917\u0932\u093f\u0915" : "Manglik").font(.caption).foregroundColor(.red)
+                                Text(appState.useHindi ? "\u{092e}\u{093e}\u{0902}\u{0917}\u{0932}\u{093f}\u{0915}" : "Manglik").font(.caption).foregroundColor(.red)
                             }
                         }
                     }
                     .padding()
                     
                     VStack(alignment: .leading, spacing: 12) {
-                        Text(appState.useHindi ? "\u0905\u0937\u094d\u091f \u0915\u0942\u091f \u0935\u093f\u0935\u0930\u0923" : "Ashta Koota Details")
+                        Text(appState.useHindi ? "\u{0905}\u{0937}\u{094d}\u{091f} \u{0915}\u{0942}\u{091f} \u{0935}\u{093f}\u{0935}\u{0930}\u{0923}" : "Ashta Koota Details")
                             .font(.headline)
                             .padding(.horizontal)
                         
@@ -139,19 +139,19 @@ struct MatchingResultView: View {
                     }
                     
                     Text(appState.useHindi
-                         ? "\u26a0\ufe0f \u0921\u0947\u092e\u094b \u0938\u094d\u0915\u094b\u0930\u0964 \u0935\u093e\u0938\u094d\u0924\u0935\u093f\u0915 \u0917\u0923\u0928\u093e \u0915\u0947 \u0932\u093f\u090f \u0938\u0939\u0940 \u0907\u0902\u091c\u093f\u0928 \u091c\u094b\u0921\u093c\u0947\u0902\u0964"
-                         : "\u26a0\ufe0f Demo scores. Integrate real calculation engine for accuracy.")
+                         ? "\u{26a0}\u{fe0f} \u{0921}\u{0947}\u{092e}\u{094b} \u{0938}\u{094d}\u{0915}\u{094b}\u{0930}\u{0964} \u{0935}\u{093e}\u{0938}\u{094d}\u{0924}\u{0935}\u{093f}\u{0915} \u{0917}\u{0923}\u{0928}\u{093e} \u{0915}\u{0947} \u{0932}\u{093f}\u{090f} \u{0938}\u{0939}\u{0940} \u{0907}\u{0902}\u{091c}\u{093f}\u{0928} \u{091c}\u{094b}\u{0921}\u{093c}\u{0947}\u{0902}\u{0964}"
+                         : "\u{26a0}\u{fe0f} Demo scores. Integrate real calculation engine for accuracy.")
                         .font(.caption2)
                         .foregroundColor(.secondary)
                         .padding()
                 }
             }
             .background(Color(.systemGroupedBackground))
-            .navigationTitle(appState.useHindi ? "\u092e\u093f\u0932\u093e\u0928 \u092a\u0930\u093f\u0923\u093e\u092e" : "Matching Result")
+            .navigationTitle(appState.useHindi ? "\u{092e}\u{093f}\u{0932}\u{093e}\u{0928} \u{092a}\u{0930}\u{093f}\u{0923}\u{093e}\u{092e}" : "Matching Result")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button(appState.useHindi ? "\u092c\u0902\u0926 \u0915\u0930\u0947\u0902" : "Close") { dismiss() }
+                    Button(appState.useHindi ? "\u{092c}\u{0902}\u{0926} \u{0915}\u{0930}\u{0947}\u{0902}" : "Close") { dismiss() }
                 }
             }
         }

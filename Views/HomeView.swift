@@ -8,16 +8,16 @@ struct HomeView: View {
             ScrollView {
                 VStack(spacing: 24) {
                     VStack(spacing: 8) {
-                        Text(appState.useHindi ? "\u091c\u092f \u0936\u094d\u0930\u0940 \u0915\u0943\u0937\u094d\u0923" : "Jai Shri Krishna")
+                        Text(appState.useHindi ? "\u{091c}\u{092f} \u{0936}\u{094d}\u{0930}\u{0940} \u{0915}\u{0943}\u{0937}\u{094d}\u{0923}" : "Jai Shri Krishna")
                             .font(.title2)
                             .fontWeight(.medium)
                             .foregroundColor(.orange)
                         
-                        Text(appState.useHindi ? "\u091c\u094d\u092f\u094b\u0924\u093f\u0937 \u0938\u0947\u0935\u093e" : "Jyotish Seva")
+                        Text(appState.useHindi ? "\u{091c}\u{094d}\u{092f}\u{094b}\u{0924}\u{093f}\u{0937} \u{0938}\u{0947}\u{0935}\u{093e}" : "Jyotish Seva")
                             .font(.largeTitle)
                             .fontWeight(.bold)
                         
-                        Text(appState.useHindi ? "\u092a\u0902\u0921\u093f\u0924\u094b\u0902 \u0915\u0947 \u0932\u093f\u090f \u0938\u092e\u0930\u094d\u092a\u093f\u0924 \u090f\u092a" : "Dedicated app for Pandits")
+                        Text(appState.useHindi ? "\u{092a}\u{0902}\u{0921}\u{093f}\u{0924}\u{094b}\u{0902} \u{0915}\u{0947} \u{0932}\u{093f}\u{090f} \u{0938}\u{092e}\u{0930}\u{094d}\u{092a}\u{093f}\u{0924} \u{090f}\u{092a}" : "Dedicated app for Pandits")
                             .font(.subheadline)
                             .foregroundColor(.secondary)
                     }
@@ -27,32 +27,32 @@ struct HomeView: View {
                         NavigationLink {
                             NewKundaliView()
                         } label: {
-                            QuickActionCard(title: appState.useHindi ? "\u0928\u0908 \u0915\u0941\u0902\u0921\u0932\u0940" : "New Kundali", icon: "star.circle.fill", color: .orange)
+                            QuickActionCard(title: appState.useHindi ? "\u{0928}\u{0908} \u{0915}\u{0941}\u{0902}\u{0921}\u{0932}\u{0940}" : "New Kundali", icon: "star.circle.fill", color: .orange)
                         }
                         
                         NavigationLink {
                             MatchingView()
                         } label: {
-                            QuickActionCard(title: appState.useHindi ? "\u0915\u0941\u0902\u0921\u0932\u0940 \u092e\u093f\u0932\u093e\u0928" : "Matching", icon: "heart.circle.fill", color: .pink)
+                            QuickActionCard(title: appState.useHindi ? "\u{0915}\u{0941}\u{0902}\u{0921}\u{0932}\u{0940} \u{092e}\u{093f}\u{0932}\u{093e}\u{0928}" : "Matching", icon: "heart.circle.fill", color: .pink)
                         }
                         
                         NavigationLink {
                             PanchangView()
                         } label: {
-                            QuickActionCard(title: appState.useHindi ? "\u0906\u091c \u0915\u093e \u092a\u0902\u091a\u093e\u0902\u0917" : "Today's Panchang", icon: "calendar", color: .blue)
+                            QuickActionCard(title: appState.useHindi ? "\u{0906}\u{091c} \u{0915}\u{093e} \u{092a}\u{0902}\u{091a}\u{093e}\u{0902}\u{0917}" : "Today's Panchang", icon: "calendar", color: .blue)
                         }
                         
                         Button {
                             appState.useHindi.toggle()
                         } label: {
-                            QuickActionCard(title: appState.useHindi ? "English" : "\u0939\u093f\u0902\u0926\u0940", icon: "globe", color: .green)
+                            QuickActionCard(title: appState.useHindi ? "English" : "\u{0939}\u{093f}\u{0902}\u{0926}\u{0940}", icon: "globe", color: .green)
                         }
                     }
                     .padding(.horizontal)
                     
                     if !appState.recentKundalis.isEmpty {
                         VStack(alignment: .leading, spacing: 12) {
-                            Text(appState.useHindi ? "\u0939\u093e\u0932 \u0915\u0940 \u0915\u0941\u0902\u0921\u0932\u093f\u092f\u093e\u0901" : "Recent Kundalis")
+                            Text(appState.useHindi ? "\u{0939}\u{093e}\u{0932} \u{0915}\u{0940} \u{0915}\u{0941}\u{0902}\u{0921}\u{0932}\u{093f}\u{092f}\u{093e}\u{0901}" : "Recent Kundalis")
                                 .font(.headline)
                                 .padding(.horizontal)
                             
@@ -68,7 +68,7 @@ struct HomeView: View {
                     
                     Spacer(minLength: 40)
                     
-                    Text("\u0950")
+                    Text("\u{0950}")
                         .font(.system(size: 48))
                         .foregroundColor(.orange.opacity(0.3))
                 }
@@ -113,7 +113,7 @@ struct RecentKundaliRow: View {
                 Text(kundali.birthDetails.name)
                     .font(.headline)
                     .foregroundColor(.primary)
-                Text("\(kundali.lagna) \u2022 \(kundali.nakshatra)")
+                Text("\(kundali.lagna) \u{2022} \(kundali.nakshatra)")
                     .font(.caption)
                     .foregroundColor(.secondary)
             }
